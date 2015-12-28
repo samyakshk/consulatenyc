@@ -40,13 +40,16 @@ Route::get('admin/categories','Categoriescontroller@index');
 Route::get('admin/categories/create','Categoriescontroller@create');
 Route::get('admin/categories/{id}','Categoriescontroller@show');
 Route::post('admin/categories','Categoriescontroller@store');
-
+Route::get('admin/categories/{id}/edit','CategoriesController@edit');
+Route::patch('admin/categories/{id}/update','CategoriesController@update');
+Route::get('admin/categories/{id}/delete','CategoriesController@destroy');
 
 Route::get('admin/pages','PagesController@index');
 Route::get('admin/pages/create','PagesController@create');
 Route::get('admin/pages/{id}','PagesController@show');
 
 Route::get('admin/pages/{id}/edit','PagesController@edit');
+Route::patch('admin/pages/{id}/update','PagesController@update');
 
 
 Route::get('admin/pages/{id}/delete','PagesController@destroy');

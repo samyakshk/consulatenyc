@@ -8,6 +8,16 @@
 {!!Form::label('title','title')!!}
 {!!Form::text('title',null,['class'=>'form-control'])!!}
 </div>
+<div class="form-goup">
+{!!Form::label('url_title','url_title')!!}
+{!!Form::text('url_title',null,['class'=>'form-control'])!!}
+</div>
+
+<div class="form-goup">
+{!!Form::label('menu_title','menu_title')!!}
+{!!Form::text('menu_title',null,['class'=>'form-control'])!!}
+</div>
+
 
 <div class="form-goup">
 {!!Form::label('image','image')!!}
@@ -23,6 +33,8 @@
 {!!Form::label('category_id','category')!!}
 {!!Form::select('category_id',$categories,null,['class'=>'form-control'])!!}
 </div>
+{!!Form::Label('show_in_menu','show_in_menu')!!}
+{!!Form::checkbox('show_in_menu',1,null,['class'=>'form-control'])!!}
 
 {!!Form::Label('is_published','is published')!!}
 {!!Form::checkbox('is_published',1,null,['class'=>'form-control'])!!}

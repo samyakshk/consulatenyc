@@ -17,7 +17,7 @@ class CreateCategoriesTable extends Migration
     $table->increments('id');
     $table->string('title');
     $table->text('details');
-
+    $table->boolean('show_in_menu');
 
     $table->timestamps();
 

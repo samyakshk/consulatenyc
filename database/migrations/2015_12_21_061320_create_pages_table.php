@@ -18,12 +18,14 @@ class CreatePagesTable extends Migration
             $table->increments('id');
             $table->integer('category_id')->unsigned();
             $table->string('title');
+            $table->string('url_title');
+            $table->string('menu_title');
             $table->string('image');
             $table->text('details');
             $table->boolean('is_published');
             $table->timestamps();
-
-             $table->foreign('category_id')
+            $table->boolean('show_in_menu');
+            $table->foreign('category_id')
             ->references('id')
             ->on('categories')
             ->onDelete('cascade');

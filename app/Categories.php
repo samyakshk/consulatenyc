@@ -8,7 +8,8 @@ class Categories extends Model
 {
   protected $fillable=[
 'title',
-'details'
+'details',
+'show_in_menu'
     ];
 
 public function pages()

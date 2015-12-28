@@ -11,8 +11,8 @@
 @foreach($categories as $category)  
      <tr>
 <td><a href="{{action('Categoriescontroller@show',[$category->id])}}"><h4>{{$category->title}}</h4></a></li>
-<td><button type="button" class="btn btn-warning">Edit</button>
-<button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</button>
+<td><a class="btn btn-warning" href="{{action('CategoriesController@edit',[$category->id])}}" role="button">Edit</a>
+<a class="btn btn-danger" href="{{action('CategoriesController@destroy',[$category->id])}}" role="button"><span class="glyphicon glyphicon-trash"></span> Delete</a>
 </td>
  
 

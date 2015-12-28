@@ -17,7 +17,7 @@
  
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="{{url('/',null)}}">Consulate Nepal NYC</a>
+      <a class="navbar-brand" href="{{url('/',null)}}" class="pull-left"><img src="/laravel/consulatenyc/public/images/logo_nyc.png" alt="logo" ></a>
     </div>
     <div>
       <ul class="nav navbar-nav">
@@ -40,7 +40,7 @@
 </nav>
 
         <div class="container">
- <img src="/laravel/consulatenyc/public/images/nepal-gov-logo.png" alt="logo">
+ {{--<img src="/laravel/consulatenyc/public/images/nepal-gov-logo.png" alt="logo">--}}
             @yield('content')
             <br>
             

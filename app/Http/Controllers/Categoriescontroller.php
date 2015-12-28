@@ -7,8 +7,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Categories;
-
-
 use Request;
 class Categoriescontroller extends Controller
 {
@@ -68,7 +66,8 @@ class Categoriescontroller extends Controller
      */
     public function edit($id)
     {
-        //
+        $categories=Categories::findorFail($id);
+        return view('admin.categories.edit')->with('categories',$categories);
     }
 
     /**
@@ -78,9 +77,12 @@ class Categoriescontroller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id)
     {
-        //
+        $categoriesupdate=Request::all();
+        $categories=Categories::findorFail($id);
+        $categories->update($categoriesupdate);
+        return redirect('admin/categories');
     }
 
     /**
@@ -91,6 +93,8 @@ class Categoriescontroller extends Controller
      */
     public function destroy($id)
     {
-        //
+        $categories=Categories::findorFail($id);
+        $categories->delete();
+        return redirect('admin/categories');
     }
 }

@@ -11,7 +11,10 @@ class Pages extends Model
 'details',
 'image',
 'category_id',
-'is_published'
+'is_published',
+'url_title',
+'menu_title',
+'show_in_menu'
     ];
 
 
