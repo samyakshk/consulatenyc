@@ -17,7 +17,7 @@
  
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="{{url('/',null)}}" class="pull-left"><img src="/laravel/consulatenyc/public/images/logo_nyc.png" alt="logo" ></a>
+      <a class="navbar-brand" href="{{url('/',null)}}" class="pull-left">Consulate Nepal</a>
     </div>
     <div>
       <ul class="nav navbar-nav">

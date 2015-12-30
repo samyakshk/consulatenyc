@@ -24,12 +24,12 @@ Route::get('auth/logout', ['as'=>'logout','uses' =>'Auth\AuthController@getLogou
 Route::get('auth/register',['as'=>'register','uses' => 'Auth\AuthController@getRegister']);
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
-Route::get('/admin',function(){
+Route::get('/admin',['middleware'=>'auth',function(){
 return view('admin.index');
 
 
 
-});
+}]);
 
 Route::get('front/contact',function(){
 return view('front.contactpage');

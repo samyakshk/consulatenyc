@@ -24,7 +24,7 @@
       <ul class="nav navbar-nav navbar-right">
         @if(Auth::check())
         	<li><a href="#">Welcome {{Auth::user()->name}}</a></li>
-			<li> <a href="auth/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+			<li> <a href="{{url('/auth/logout',null)}}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 		@else
       		 <li><a href="{{url('auth/register',null)}}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       			 <li><a href="{{url('auth/login',null)}}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
