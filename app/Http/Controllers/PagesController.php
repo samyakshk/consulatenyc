@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Pages;
 use Request;
 use App\Categories;
+use Input;
 class PagesController extends Controller
 {
     public function __construct()
@@ -51,10 +52,35 @@ class PagesController extends Controller
     public function store(Request $request)
     {
          $input=Request::all();
+         if (Input::hasFile('image'))
+         {
+            $file=Input::file('image');
+            $file->move('public/images',$file->getClientOriginalName());
 
-      Pages::create($input);
+           
+
+         }
+
+      //  $file==$request->file('userfile');
+       // $destination_path = 'public/images';
+       // $filename = str_random(6).'_'.$file->getClientOriginalName();
+     //   $file->move($destination_path, $filename);
+        
+     //   $image->file = $destination_path . $filename;
+      
+      //$image->save();
+
+        
+            Pages::create($input);
 
       return redirect('admin/pages');
+
+           
+
+
+
+
+      
     }
 
     /**

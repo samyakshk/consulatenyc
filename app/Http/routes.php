@@ -52,6 +52,7 @@ Route::get('admin/pages/{id}/edit','PagesController@edit');
 Route::patch('admin/pages/{id}/update','PagesController@update');
 
 
+
 Route::get('admin/pages/{id}/delete','PagesController@destroy');
 //Route::get('admin/pages/{id}/delete',function()
 

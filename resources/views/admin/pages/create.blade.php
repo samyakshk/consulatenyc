@@ -23,7 +23,7 @@
 
 <div class="form-goup">
 {!!Form::label('image','image')!!}
-{!!Form::text('image',null,['class'=>'form-control'])!!}
+{!!Form::file('image',null,['class'=>'form-control'])!!}
 </div>
 
 
