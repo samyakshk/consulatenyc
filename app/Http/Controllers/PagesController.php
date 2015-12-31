@@ -55,13 +55,13 @@ class PagesController extends Controller
          if (Input::hasFile('image'))
          {
             $file=Input::file('image');
-            $file->move('public/images',$file->getClientOriginalName());
-
+            $file->move('images',$file->getClientOriginalName());
+          //  $file->save();
            
 
          }
-
       //  $file==$request->file('userfile');
+
        // $destination_path = 'public/images';
        // $filename = str_random(6).'_'.$file->getClientOriginalName();
      //   $file->move($destination_path, $filename);

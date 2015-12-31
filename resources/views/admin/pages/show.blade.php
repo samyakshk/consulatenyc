@@ -6,8 +6,8 @@
 <hr>
 <p>{{$pages->category_id}}</p>
 <p>{{$pages->image}}</p>
-<p>{{$pages->details}}</p>
+{!!$pages->details!!}
 
 
-
+  
 @endsection

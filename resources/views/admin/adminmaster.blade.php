@@ -3,7 +3,11 @@
 
     <head>
        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+      {{-- <script src="/vendor/ckeditor/ckeditor.js"></script>--}}
+        <script src="//cdn.ckeditor.com/4.5.6/standard/ckeditor.js"></script>
         <title>Consulate Nepal </title>
+       
+  
     </head>
    
 
