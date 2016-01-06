@@ -21,7 +21,7 @@
 		<input type="text" class="form-control" placeholder="Your Full Name">
 </fieldset>
 <fieldset class="form-group">
-	<label>Date of birth:</lable>
+	<label>Date of birth:</label>
 		<input type="date" class="form-control" >
 </fieldset>
 <fieldset class="form-group">

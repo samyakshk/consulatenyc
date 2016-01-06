@@ -1,6 +1,6 @@
 @extends('admin.adminmaster')
 @section('content')
- <script src="vendor/ckeditor/ckeditor.js"></script>
+ 
 <h2>Create pages</h2>
 
 {!!Form::open(['url'=>'admin/pages'])!!}
@@ -31,8 +31,8 @@
 {!!Form::label('details','details')!!}
 {!!Form::textarea('details',null,['class'=>'form-control'])!!}
 
-<script>
-            ckeditor.replace( 'details' );
+ <script>
+            CKEDITOR.replace( 'details' );
         </script>
 </div>
 <div class="form-goup">a

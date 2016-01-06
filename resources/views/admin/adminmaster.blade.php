@@ -4,7 +4,7 @@
     <head>
        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
       {{-- <script src="/vendor/ckeditor/ckeditor.js"></script>--}}
-        <script src="//cdn.ckeditor.com/4.5.6/standard/ckeditor.js"></script>
+       <script src="//cdn.ckeditor.com/4.5.6/full/ckeditor.js"></script>
         <title>Consulate Nepal </title>
        
   
@@ -23,7 +23,7 @@
         <li class="active"><a href="{{url('/admin',null)}}">Home</a></li>
         <li><a href="{{url('/admin/categories',null)}}">Categories</a></li>
         <li><a href="{{url('/admin/pages',null)}}">Pages</a></li> 
-         
+          <li><a href="{{url('/admin/passport',null)}}">Passports</a></li> 
       </ul>
       <ul class="nav navbar-nav navbar-right">
         @if(Auth::check())

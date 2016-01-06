@@ -36,6 +36,10 @@ return view('front.contactpage');
 
 
 });
+
+//Routes for categories
+
+
 Route::get('admin/categories','Categoriescontroller@index');
 Route::get('admin/categories/create','Categoriescontroller@create');
 Route::get('admin/categories/{id}','Categoriescontroller@show');
@@ -44,25 +48,48 @@ Route::get('admin/categories/{id}/edit','CategoriesController@edit');
 Route::patch('admin/categories/{id}/update','CategoriesController@update');
 Route::get('admin/categories/{id}/delete','CategoriesController@destroy');
 
+//Routes for pages
+
+
 Route::get('admin/pages','PagesController@index');
 Route::get('admin/pages/create','PagesController@create');
 Route::get('admin/pages/{id}','PagesController@show');
-
 Route::get('admin/pages/{id}/edit','PagesController@edit');
 Route::patch('admin/pages/{id}/update','PagesController@update');
-
-
-
 Route::get('admin/pages/{id}/delete','PagesController@destroy');
+ Route::post('admin/pages','PagesController@store');
+
+
+
 //Route::get('admin/pages/{id}/delete',function()
 
 //{
 //	return view('admin.pages.delete');
 //}
 //	);
-Route::post('admin/pages','PagesController@store');
 
+Route::get('front/category/{id}','menucontroller@show');
 Route::get('front/page/{id}','publicpagecontroller@show');
+
+
+//Routes for passport
+
+Route::get('admin/passport','PassportController@index');
+Route::get('admin/passport/create','PassportController@create');
+Route::get('admin/passport/{id}','PassportController@show');
+Route::get('admin/passport/{id}/edit','PassportController@edit');
+Route::patch('admin/passport/{id}/update','PassportController@update');
+Route::get('admin/passport/{id}/delete','PassportController@destroy');
+ 
+ Route::post('admin/passport','PassportController@store');
+
+
+
+
+
+
+
+
 Route::controllers([
    'password' => 'Auth\PasswordController',
 ]);

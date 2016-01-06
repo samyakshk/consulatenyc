@@ -10,7 +10,13 @@
 
 <body>
      
-
+  <?php
+        use App\Pages;
+        use App\Categories;
+         $pages=Pages::latest()->get();
+         $categories=Categories::latest()->get();
+        ?>
+          
  
 <nav class="navbar navbar-inverse">
 
@@ -22,15 +28,24 @@
     <div>
       <ul class="nav navbar-nav">
         <li class="active"><a href="{{url('/',null)}}">Home</a></li>
-        <?php
-        use App\Pages;
-         $pages=Pages::latest()->get();
-        ?>
+      
+      <li class="dropdown">
+
+
+
+
+
+           @foreach($categories as $category )
+
+        <li><a href="{{action('menucontroller@show',[$category->id])}}">{{$category->title}}</a></li>
+              <ul class="dropdown-menu">  
                  @foreach($pages as $page)  
         <li> 
-<a href="{{action('publicpagecontroller@show',[$page->id])}}">{{$page->title}}</a>
+          <a href="{{action('publicpagecontroller@show',[$page->id])}}">{{$page->title}}</a>
 
-</li>
+      </li>
+@endforeach
+</ul>
 @endforeach
 <li><a href="{{url('front/contact',null)}}">Contact Us</a></li>
 </ul>
