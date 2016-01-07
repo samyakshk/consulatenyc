@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-//use Illuminate\Http\Request;
+use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Request;
-use App\Statuses;
-class StatusController extends Controller
+
+class PassportStatusController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +16,7 @@ class StatusController extends Controller
      */
     public function index()
     {
-       $stats=Statuses::latest()->get();
-        return view('admin.status.index')->with('stats',$stats);
+        //
     }
 
     /**
@@ -28,7 +26,7 @@ class StatusController extends Controller
      */
     public function create()
     {
-        return view('admin.status.create');
+        //
     }
 
     /**
@@ -39,11 +37,7 @@ class StatusController extends Controller
      */
     public function store(Request $request)
     {
-         $input=Request::all();
-
-      Statuses::create($input);
-
-      return redirect('admin/status');
+        //
     }
 
     /**
@@ -54,9 +48,7 @@ class StatusController extends Controller
      */
     public function show($id)
     {
-        $stats=Statuses::findorFail($id);
-        
-        return view('admin.status.show')->with('stats',$stats);
+        //
     }
 
     /**
@@ -67,9 +59,7 @@ class StatusController extends Controller
      */
     public function edit($id)
     {
-         $stats=Statuses::findorFail($id);
-         
-         return view('admin.status.edit')->with('stats',$stats);
+        //
     }
 
     /**
@@ -81,10 +71,7 @@ class StatusController extends Controller
      */
     public function update(Request $request, $id)
     {
-         $statUpdate=Request::all();
-        $stats=Statuses::findorFail($id);
-        $stats->update($statUpdate);
-        return redirect('admin/status');
+        //
     }
 
     /**
@@ -95,8 +82,6 @@ class StatusController extends Controller
      */
     public function destroy($id)
     {
-         $stats=Statuses::findorFail($id);
-       $stats->delete();
-       return redirect('admin/status');
+        //
     }
 }

@@ -2,7 +2,11 @@
 <html>
 
     <head>
-       <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+       <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <title>Consulate Nepal </title>
     </head>
    
@@ -19,8 +23,6 @@
           
  
 <nav class="navbar navbar-inverse">
-
- 
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="{{url('/',null)}}" class="pull-left">Consulate Nepal</a>
@@ -28,25 +30,20 @@
     <div>
       <ul class="nav navbar-nav">
         <li class="active"><a href="{{url('/',null)}}">Home</a></li>
-      
-      <li class="dropdown">
+        @foreach($categories as $category )
+        <li class="dropdown">
+         
+          <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$category->title}}<span class="caret"></span></a>
+         
 
+          <ul class="dropdown-menu">
+            @foreach($category->pages as $page)
+            <li><a href="{{action('publicpagecontroller@show',[$page->id])}}">{{$page->title}}</a></li>
+            @endforeach
+                     </ul>
+        </li>
+        @endforeach
 
-
-
-
-           @foreach($categories as $category )
-
-        <li><a href="{{action('menucontroller@show',[$category->id])}}">{{$category->title}}</a></li>
-              <ul class="dropdown-menu">  
-                 @foreach($pages as $page)  
-        <li> 
-          <a href="{{action('publicpagecontroller@show',[$page->id])}}">{{$page->title}}</a>
-
-      </li>
-@endforeach
-</ul>
-@endforeach
 <li><a href="{{url('front/contact',null)}}">Contact Us</a></li>
 </ul>
       
@@ -78,4 +75,6 @@
 </footer>
 </div>
     </body>
+    <!-- Latest compiled and minified JavaScript -->
+
 </html>

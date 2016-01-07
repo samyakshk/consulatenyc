@@ -19,7 +19,7 @@ class CreatePassportstatusTable extends Migration
 
 
             $table->integer('status_id')->unsigned()->index();
-             $table->foreign('status_id')->references('id')->on('status')->onDelete('cascade');
+             $table->foreign('status_id')->references('id')->on('statuses')->onDelete('cascade');
             $table->timestamps();
 
 

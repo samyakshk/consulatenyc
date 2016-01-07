@@ -2,6 +2,6 @@
 
 @section('content')
 
-{{$stats->Status}}
+{{$stats->Status_Name}}
 
 @endsection

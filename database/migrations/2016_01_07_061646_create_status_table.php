@@ -12,11 +12,11 @@ class CreateStatusTable extends Migration
      */
     public function up()
     {
-        Schema::create('status',function(Blueprint $table)
+        Schema::create('statuses',function(Blueprint $table)
           {
             $table->increments('id');
            
-            $table->string('Status',100);
+            $table->string('Status_Name',100);
            
             $table->timestamps();
             
@@ -34,7 +34,7 @@ class CreateStatusTable extends Migration
      */
     public function down()
     {
-        Schema::drop('passportstatus');
-        Schema::drop('passport_status');
+        Schema::drop('statuses');
+        
     }
 }

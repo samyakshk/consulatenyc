@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Status extends Model
+class Statuses extends Model
 {
-    protected $fillable=[
-'Status'
+     protected $fillable=[
+'Status_Name'
 
     ];
 
@@ -18,3 +18,6 @@ return $this->belongsToMany('App\Passport');
 
 }
 }
+
+
+

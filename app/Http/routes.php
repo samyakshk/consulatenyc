@@ -83,6 +83,19 @@ Route::get('admin/passport/{id}/delete','PassportController@destroy');
  
  Route::post('admin/passport','PassportController@store');
 
+// Routes for Status
+Route::get('admin/status','StatusController@index');
+
+Route::get('admin/status/create','StatusController@create');
+Route::get('admin/status/{id}','StatusController@show');
+Route::get('admin/status/{id}/edit','StatusController@edit');
+
+Route::patch('admin/status/{id}/update','StatusController@update');
+Route::get('admin/status/{id}/delete','StatusController@destroy');
+ 
+ Route::post('admin/status','StatusController@store');
+
+
 
 
 

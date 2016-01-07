@@ -5,8 +5,8 @@
 
 {!!Form::open(['url'=>'admin/status'])!!}
 <div class="form-goup">
-{!!Form::label('Status','Status name')!!}
-{!!Form::text('Status',null,['class'=>'form-control'])!!}
+{!!Form::label('Status_Name','Status name')!!}
+{!!Form::text('Status_Name',null,['class'=>'form-control'])!!}
 </div>
 
 <div class="form-group">
