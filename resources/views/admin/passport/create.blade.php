@@ -27,8 +27,13 @@
 </div>--}}
 {!!Form::label('Passport_Number','Passport Number')!!}
 {!!Form::text('Passport_Number',null,['class'=>'form-control'])!!}
+<div class="form-goup">
+{!!Form::label('Status_Name','Status')!!}
+{!!Form::select('Status_Name',$statuses,null,['class'=>'form-control'])!!}
+</div>
+
 <div class="form-group">
-{!!Form::submit('Add page',['class'=>'btn btn-primary'])!!}
+{!!Form::submit('Add',['class'=>'btn btn-primary'])!!}
 
 	</div>
 	{!!Form::close()!!}

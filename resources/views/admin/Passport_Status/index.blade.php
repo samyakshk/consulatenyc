@@ -2,20 +2,19 @@
 @section('content')
 
 <h2>Passport list </h2>
-<a class="btn btn-primary" href="passport/create" role="button">+ Add New Passport</a>
+<a class="btn btn-primary" href="passport/create" role="button">+ Add New Passport Status</a>
 
 <hr>
 <table style="width:100%">
- @foreach($passports as $passport)
+ @foreach($passportstatus as $passportstat)
   <tr>
-    <td><a href="{{action('PassportController@show',[$passport->id])}}"><h4>{{$passport->Full_Name}}</h4></a></td>
-   <td><a class="btn btn-warning" href="{{action('PassportController@edit',[$passport->id])}}" role="button">Edit</a>
+    <td><a href="{{action('PassportStatusController@show',[$passportstat->id])}}"><h4>{{$passportstat->Passport_Number}}</h4></a></td>
+  <td>{{$passportstat->Status_Name}}</h4></a></td>
 
-    {{--<button type="button" class="btn btn-warning" href="{{action('PagesController@edit',[$page->id])}}">Edit</button>--}}
+  {{--<td><a class="btn btn-warning" href="{{action('PassportController@edit',[$passport->id])}}" role="button">Edit</a>
 
-{{--{!!Form::model($page,['method'=>'DELETE','action'=>['PagesController@destroy',$page->id]])!!}--}}
-{{--<button type="button" class="btn btn-danger" href="admin/delete"><span class="glyphicon glyphicon-trash"></span> Delete</button>--}}
-<a class="btn btn-danger" href="{{action('PassportController@destroy',[$passport->id])}}" role="button"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+    
+<a class="btn btn-danger" href="{{action('PassportController@destroy',[$passport->id])}}" role="button"><span class="glyphicon glyphicon-trash"></span> Delete</a>--}}
 {{--{!!Form::close()!!}--}}
 </td>
  

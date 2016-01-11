@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-//use Illuminate\Http\Request;
+use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Request;
+//use Request;
 use  App\Passport;
+use App\Statuses;
 class PassportController extends Controller
 {
     public function __construct()
@@ -33,7 +34,8 @@ class PassportController extends Controller
      */
     public function create()
     {
-        return view('admin.passport.create');
+            $statuses=Statuses::lists('Status_Name','id');
+        return view('admin.passport.create')->with('statuses',$statuses);
     }
 
     /**
@@ -42,12 +44,19 @@ class PassportController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {
-       $input=Request::all();
+       // dd(Request::input('statuses'));
+      //$pass=Request::all();
+       
+  //$passport=Passport::create($pass);
+   //   $passports=Passport::find($passport_id);
+    //  $passport->statuses()->attach($status_id);
+   //$passport->status()->attach(Request::input('statuses'));
+$passport=Passport::create($request->all());
 
-      Passport::create($input);
 
+$passport->status()->attach($request->input('Status_Name'));
       return redirect('admin/passport');
     }
 

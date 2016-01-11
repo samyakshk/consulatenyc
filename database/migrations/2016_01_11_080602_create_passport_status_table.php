@@ -12,14 +12,14 @@ class CreatePassportstatusTable extends Migration
      */
     public function up()
     {
-         Schema::create('passport_status',function(Blueprint $table)
+         Schema::create('passport_statuses',function(Blueprint $table)
         {
             $table->integer('passport_id')->unsigned()->index();
             $table->foreign('passport_id')->references('id')->on('passports')->onDelete('cascade');
 
 
-            $table->integer('status_id')->unsigned()->index();
-             $table->foreign('status_id')->references('id')->on('statuses')->onDelete('cascade');
+            $table->integer('statuses_id')->unsigned()->index();
+             $table->foreign('statuses_id')->references('id')->on('statuses')->onDelete('cascade');
             $table->timestamps();
 
 
@@ -34,6 +34,6 @@ class CreatePassportstatusTable extends Migration
      */
     public function down()
     {
-       Schema::drop('passport_status');
+       Schema::drop('passport_statuses');
     }
 }

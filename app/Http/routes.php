@@ -95,11 +95,11 @@ Route::get('admin/status/{id}/delete','StatusController@destroy');
  
  Route::post('admin/status','StatusController@store');
 
+Route::get('admin/passportstatus','PassportStatusController@index');
+Route::get('admin/passportstatus/create','PassportStatusController@create');
+Route::get('admin/passportstatus/{id}','PassportStatusController@show');
 
-
-
-
-
+ Route::post('admin/passportstatus','PassportStatusController@store');
 
 
 

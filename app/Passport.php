@@ -10,7 +10,6 @@ class Passport extends Model
 'Full_Name',
 'Date_of_Birth',
 'Passport_Number',
-'status_id',
 'comments',
 'Delivered_to_owner'
     ];
@@ -19,8 +18,8 @@ class Passport extends Model
 public function status()
 {
 
-	return $this->belongsToMany('App\Status')->withTimesamps();
-
+	return $this->belongsToMany('App\Statuses',"passport_statuses","passport_id","statuses_id")->withTimestamps();
+	
 }
 
 }

@@ -11,7 +11,7 @@ class Categories extends Model
 'details',
 
     ];
-
+protected $table='Categories';
 public function pages()
 {
 
