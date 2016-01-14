@@ -12,11 +12,9 @@ class Statuses extends Model
     ];
 
     public function passport()
-{
-return $this->belongsToMany('App\Passport')->withTimestamps();
-
-
-}
+	{
+		return $this->belongsToMany('App\Passport')->withTimestamps();
+	}
 }
 
 

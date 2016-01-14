@@ -33,7 +33,7 @@
         </script>
         
 </div>
-<div class="form-goup">a
+<div class="form-goup">
 {!!Form::label('category_id','category')!!}
 {!!Form::select('category_id',$categories,null,['class'=>'form-control'])!!}
 </div>

@@ -3,7 +3,8 @@
 
     <head>
        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-      {{-- <script src="/vendor/ckeditor/ckeditor.js"></script>--}}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
        <script src="//cdn.ckeditor.com/4.5.6/full/ckeditor.js"></script>
         <title>Consulate Nepal </title>
        
@@ -25,6 +26,7 @@
         <li><a href="{{url('/admin/pages',null)}}">Pages</a></li> 
           <li><a href="{{url('/admin/passport',null)}}">Passports</a></li> 
           <li><a href="{{url('/admin/status',null)}}">Status</a></li>
+          <li><a href="{{url('/admin/passportstatus',null)}}">Change Passport Status</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         @if(Auth::check())

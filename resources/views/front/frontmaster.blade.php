@@ -7,7 +7,22 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+ 
+<style>
+   .affix {
+      top: 0;
+      width: 100%;
+  }
+
+  .affix + .container-fluid {
+      padding-top: 70px;
+  }
+
+</style>
         <title>Consulate Nepal </title>
+  
+
+
     </head>
    
 
@@ -20,8 +35,14 @@
          $pages=Pages::latest()->get();
          $categories=Categories::latest()->get();
         ?>
-          
- 
+       
+ <div class="container-fluid" style="background-color:#6683f0;color:#fff;height:200px;">
+  
+<img src="/laravel/consulatenyc/public/images/nepal-gov-logo.png" alt="logo" height="100px" float:"left">
+  <h1>Consulate Nepal </h1>
+  <h2>New York City</h2>
+  
+</div>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -30,17 +51,17 @@
     <div>
       <ul class="nav navbar-nav">
         <li class="active"><a href="{{url('/',null)}}">Home</a></li>
-        @foreach($categories as $category )
+        @foreach($pages as $page )
         <li class="dropdown">
          
-          <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$category->title}}<span class="caret"></span></a>
+          <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$page->title}}<span class="caret"></span></a>
          
-
+{{--
           <ul class="dropdown-menu">
             @foreach($category->pages as $page)
             <li><a href="{{action('publicpagecontroller@show',[$page->id])}}">{{$page->title}}</a></li>
             @endforeach
-                     </ul>
+                     </ul>--}}
         </li>
         @endforeach
 
@@ -50,6 +71,10 @@
     </div>
   </div>
 </nav>
+
+
+
+
 
         <div class="container">
  {{--<img src="/laravel/consulatenyc/public/images/nepal-gov-logo.png" alt="logo">--}}

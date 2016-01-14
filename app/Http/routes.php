@@ -98,9 +98,9 @@ Route::get('admin/status/{id}/delete','StatusController@destroy');
 Route::get('admin/passportstatus','PassportStatusController@index');
 Route::get('admin/passportstatus/create','PassportStatusController@create');
 Route::get('admin/passportstatus/{id}','PassportStatusController@show');
-
+Route::get('admin/passportstatus/{id}/edit','PassportStatusController@edit');
  Route::post('admin/passportstatus','PassportStatusController@store');
-
+Route::patch('admin/passportstatus/{id}/update','PassportStatusController@update');
 
 
 Route::controllers([

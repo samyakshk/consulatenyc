@@ -8,6 +8,6 @@ class PassportStatus extends Model
 {
    protected $fillable=[
    'passport_id',
-   'status_id'
+   'statuses_id'
   ];
 }

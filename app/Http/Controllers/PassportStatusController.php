@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-//use Illuminate\Http\Request;
+use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Request;
+//use Request;
 use  App\Passport;
 use App\Statuses;
 use App\PassportStatus;
@@ -19,8 +19,8 @@ class PassportStatusController extends Controller
      */
     public function index()
     {
-       //  $passportstatus=PassportStatus::latest()->get();
-       // return view('admin.Passport_Status.index')->with('passportstatus',$passportstatus);
+        $passports=Passport::latest()->get();
+        return view('admin.Passport_Status.index')->with('passports',$passports);
     }
 
     /**
@@ -44,11 +44,9 @@ class PassportStatusController extends Controller
     public function store(Request $request)
     {
       
-
-      $input=Request::all();
-
-        PassportStatus::create($input);
-
+$passport=Passport::create($request->all());
+     
+    $passport->status()->attach($request->input('Status_Name'));
       return redirect('admin/passportstatus');
     }
 
@@ -73,7 +71,9 @@ class PassportStatusController extends Controller
      */
     public function edit($id)
     {
-        //
+         $passports=Passport::findorFail($id);
+         $statuses=Statuses::lists('Status_Name','id');       
+        return view('admin.Passport_Status.edit')->with('passports',$passports)->with('statuses',$statuses);
     }
 
     /**
@@ -83,9 +83,16 @@ class PassportStatusController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,$id)
     {
-        //
+        $passUpdate=Passport::create($request->all());
+        
+       $passports=Passport::findorFail($id);
+         $passUpdate->status()->attach($request->input('Status_Name'));
+
+
+       $passports->update($passUpdate);
+        return redirect('admin/passportstatus');
     }
 
     /**

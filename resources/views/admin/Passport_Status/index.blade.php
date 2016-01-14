@@ -1,31 +1,31 @@
 @extends('admin.adminmaster')
-@section('content')
+ @section('content')
 
-<h2>Passport list </h2>
-<a class="btn btn-primary" href="passport/create" role="button">+ Add New Passport Status</a>
-
-<hr>
-<table style="width:100%">
- @foreach($passportstatus as $passportstat)
-  <tr>
-    <td><a href="{{action('PassportStatusController@show',[$passportstat->id])}}"><h4>{{$passportstat->Passport_Number}}</h4></a></td>
-  <td>{{$passportstat->Status_Name}}</h4></a></td>
-
-  {{--<td><a class="btn btn-warning" href="{{action('PassportController@edit',[$passport->id])}}" role="button">Edit</a>
-
-    
-<a class="btn btn-danger" href="{{action('PassportController@destroy',[$passport->id])}}" role="button"><span class="glyphicon glyphicon-trash"></span> Delete</a>--}}
-{{--{!!Form::close()!!}--}}
-</td>
+ <h2>Passport list </h2>
  
 
-  </tr>
- 
- @endforeach
-</table>
+ <hr>
+  <table style="width:100%">
+    <tr >
+		  <th>Name</th>
+		  <th>Passport Number</th>
+		  <th>Status</th>
+		  <th>Action</th>
+
+	  </tr>
+
+   @foreach($passports as $passport)
+         <tr >
+  	           <td>{{$passport->Full_Name}}</td>
+               <td>{{$passport->Passport_Number}}</a></td>
+                <td>{{$passport->latestStatus()->Status_Name}}</td>
+               <td><a class="btn btn-warning" href="{{action('PassportStatusController@edit',[$passport->id])}}" role="button">Edit Status</a></td>
 
 
-{{--<div class="body">{{$page->details}}</div>--}}
+           </tr>
 
+     @endforeach
+
+  </table>
 
 @endsection
