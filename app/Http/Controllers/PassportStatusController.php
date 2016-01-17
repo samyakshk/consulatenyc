@@ -85,9 +85,11 @@ $passport=Passport::create($request->all());
      */
     public function update(Request $request,$id)
     {
-        $passUpdate=Passport::create($request->all());
+       $passpdate=PassportStatus::create($request->all());
+
+      //  $passUpdate=Passport::create($request->all());
         
-       $passports=Passport::findorFail($id);
+       $passports=PassportStatus::findorFail($id);
          $passUpdate->status()->attach($request->input('Status_Name'));
 
 

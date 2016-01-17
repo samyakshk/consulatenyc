@@ -40,6 +40,18 @@ return view('front.contactpage');
 //Routes for categories
 
 
+Route::get('admin/Homepage','homeController@index');
+Route::get('admin/Homepage/create','homeController@create');
+Route::get('admin/Homepage/{id}','homeController@show');
+Route::post('admin/Homepage','homeController@store');
+Route::get('admin/Homepage/{id}/edit','homeController@edit');
+Route::patch('admin/Homepage/{id}/update','homeController@update');
+Route::get('admin/Homepage/{id}/delete','homeController@destroy');
+
+
+
+
+
 Route::get('admin/categories','Categoriescontroller@index');
 Route::get('admin/categories/create','Categoriescontroller@create');
 Route::get('admin/categories/{id}','Categoriescontroller@show');

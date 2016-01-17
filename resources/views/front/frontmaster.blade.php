@@ -52,9 +52,10 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="{{url('/',null)}}">Home</a></li>
         @foreach($pages as $page )
-        <li class="dropdown">
+       <li><a href="{{action('publicpagecontroller@show',[$page->id])}}">{{$page->title}}</a></li>
+       {{-- <li class="dropdown">
          
-          <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$page->title}}<span class="caret"></span></a>
+          <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$page->title}}<span class="caret"></span></a>--}}
          
 {{--
           <ul class="dropdown-menu">

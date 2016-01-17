@@ -21,7 +21,9 @@
     </div>
     <div>
       <ul class="nav navbar-nav">
-        <li class="active"><a href="{{url('/admin',null)}}">Home</a></li>
+      
+
+        <li><a href="{{url('/admin/Homepage',null)}}">Edit Home Page</a></li>
         <li><a href="{{url('/admin/categories',null)}}">Categories</a></li>
         <li><a href="{{url('/admin/pages',null)}}">Pages</a></li> 
           <li><a href="{{url('/admin/passport',null)}}">Passports</a></li> 
