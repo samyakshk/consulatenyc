@@ -32,15 +32,22 @@
   <?php
         use App\Pages;
         use App\Categories;
+      
          $pages=Pages::latest()->get();
          $categories=Categories::latest()->get();
+        
         ?>
        
- <div class="container-fluid" style="background-color:#6683f0;color:#fff;height:200px;">
-  
-<img src="/laravel/consulatenyc/public/images/nepal-gov-logo.png" alt="logo" height="100px" float:"left">
-  <h1>Consulate Nepal </h1>
-  <h2>New York City</h2>
+ <div class="container-fluid" style="background-color:#6683f0;color:#fff;height:130px;">
+  <div class="row">
+    <div class="col-sm-1">
+        <img src="/laravel/consulatenyc/public/images/nepal-gov-logo.png" alt="logo" height="100px" float:"left">
+    </div>
+          <div class="col-sm-4">
+              <h3>Consulate Nepal </h3>
+              <h3>New York City</h3>
+          </div>
+  </div>
   
 </div>
 <nav class="navbar navbar-inverse">
@@ -51,20 +58,57 @@
     <div>
       <ul class="nav navbar-nav">
         <li class="active"><a href="{{url('/',null)}}">Home</a></li>
-        @foreach($pages as $page )
-       <li><a href="{{action('publicpagecontroller@show',[$page->id])}}">{{$page->title}}</a></li>
-       {{-- <li class="dropdown">
-         
-          <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$page->title}}<span class="caret"></span></a>--}}
-         
-{{--
+         <li class="dropdown">
+        <li><a class="dropdown-toggle" data-toggle="dropdown" href="{{url('/',null)}}">About Us<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            @foreach($category->pages as $page)
-            <li><a href="{{action('publicpagecontroller@show',[$page->id])}}">{{$page->title}}</a></li>
-            @endforeach
-                     </ul>--}}
+               <li><a href="{{url('/front/consular',null)}}">Consular General</a></li>
+
+                   <li><a href="{{url('/front/orgstruc',null)}}">Organisation Structure</a></li>
+           
+      
+            </li>
+       
+          </ul>
         </li>
-        @endforeach
+         <li class="dropdown">
+        <li><a class="dropdown-toggle" data-toggle="dropdown" href="{{url('/',null)}}">Visa<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+               <li><a href="{{url('/front/DipVisa',null)}}">Diplomacy Visa</a></li>
+          <li><a href="{{url('/front/Tvisa',null)}}">Tourist Visa</a></li>
+          <li><a href="{{url('/front/OffVisa',null)}}">Official Visa</a></li> 
+          </ul>
+        </li>
+   <li class="dropdown">
+        <li><a class="dropdown-toggle" data-toggle="dropdown" href="{{url('/',null)}}">Services<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+               <li><a href="{{url('/front/POA',null)}}">Power of Attorney</a></li>
+          <li><a href="{{url('/front/Attestation',null)}}">Attestation</a></li>
+          <li><a href="{{url('/front/NRNID',null)}}">NRN ID</a></li> 
+          </ul>
+        </li>
+
+          <li class="dropdown">
+        <li><a class="dropdown-toggle" data-toggle="dropdown" href="{{url('/',null)}}">Ecomomic Diplomacy<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+               <li><a href="{{url('/front/tourism',null)}}">Tourism</a></li>
+          <li><a href="{{url('/front/trade',null)}}">Trade</a></li>
+          <li><a href="{{url('/front/investment',null)}}">Investment</a></li> 
+          </ul>
+        </li>
+
+
+  <li class="dropdown">
+        <li><a class="dropdown-toggle" data-toggle="dropdown" href="{{url('/',null)}}">News & events<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+               <li><a href="{{url('/front/press',null)}}">Press Release</a></li>
+          <li><a href="{{url('/front/holiday',null)}}">Public Holidays</a></li>
+          <li><a href="{{url('/front/notice',null)}}">Notice</a></li> 
+          </ul>
+        </li>
+       
+  
+        </li>
+      
 
 <li><a href="{{url('front/contact',null)}}">Contact Us</a></li>
 </ul>
@@ -77,8 +121,8 @@
 
 
 
-        <div class="container">
- {{--<img src="/laravel/consulatenyc/public/images/nepal-gov-logo.png" alt="logo">--}}
+        <div class="container"  >
+
             @yield('content')
             <br>
             
@@ -95,12 +139,36 @@
 
 <br>
 
-<div class="footer navbar-fixed-bottom">
+<div class="footer navbar">
 <footer class="container-fluid bg-4 text-center">
-  this is footer<br><br>
+ 
+<div class="row">
+  <div class="col-sm-2">
+    <ul style="list-style: none;">Passport
+        <li></li>
+        <li></li>
+    </ul>
+  </div>
+  <div class="col-sm-2">
+       <ul style="list-style: none;">Econimic Diplomcy
+         <li><a href="#">Tourism</a></li>
+          <li><a href="#">Trade</a></li>
+          <li><a href="#">Investment</a></li> 
+    </ul>
+
+  </div>
+  <div class="col-sm-2">
+         <ul style="list-style: none;">Visa
+         <li><a href="#">Diplomatic Visa</a></li>
+          <li><a href="#">Tourist Visa</a></li>
+          <li><a href="#">Official Visa</a></li> 
+    </ul>
+  </div>
+ 
+</div>
+
 </footer>
 </div>
     </body>
-    <!-- Latest compiled and minified JavaScript -->
-
+   
 </html>

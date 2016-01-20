@@ -23,12 +23,6 @@
       <ul class="nav navbar-nav">
       
 
-        <li><a href="{{url('/admin/Homepage',null)}}">Edit Home Page</a></li>
-        <li><a href="{{url('/admin/categories',null)}}">Categories</a></li>
-        <li><a href="{{url('/admin/pages',null)}}">Pages</a></li> 
-          <li><a href="{{url('/admin/passport',null)}}">Passports</a></li> 
-          <li><a href="{{url('/admin/status',null)}}">Status</a></li>
-          <li><a href="{{url('/admin/passportstatus',null)}}">Change Passport Status</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         @if(Auth::check())

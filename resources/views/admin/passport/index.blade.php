@@ -3,6 +3,9 @@
  
 <h2>Passport list </h2>
 <a class="btn btn-primary" href="passport/create" role="button">+ Add New Passport</a>
+<a class="btn btn-primary" href="{{url('/admin/passportstatus',null)}}" role="button">change Passportstatus</a>
+<hr>
+
 
 <hr>
 <table style="width:100%">

@@ -2,7 +2,7 @@
  @section('content')
 
  <h2>Passport list </h2>
- 
+ <a class="btn btn-default" href="{{url('/admin/status',null)}}" role="button">+Add Status</a>
 
  <hr>
   <table style="width:100%">

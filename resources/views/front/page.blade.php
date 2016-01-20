@@ -9,5 +9,4 @@
 <p>{!!$pages->details!!}</p>
 
 
-
 @endsection
