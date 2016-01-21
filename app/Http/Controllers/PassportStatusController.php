@@ -85,15 +85,16 @@ $passport=Passport::create($request->all());
      */
     public function update(Request $request,$id)
     {
-       $passpdate=PassportStatus::create($request->all());
+     // dd($request->input('Status_id'));
+       //$passUpdate=PassportStatus::create($request->all());
 
       //  $passUpdate=Passport::create($request->all());
         
-       $passports=PassportStatus::findorFail($id);
-         $passUpdate->status()->attach($request->input('Status_Name'));
+       $passports=Passport::findorFail($id);
+        $passports->status()->attach($request->input('Status_id'));
 
 
-       $passports->update($passUpdate);
+      // $passports->update($passUpdate);
         return redirect('admin/passportstatus');
     }
 

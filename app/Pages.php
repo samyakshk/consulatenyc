@@ -8,25 +8,11 @@ class Pages extends Model
 {
     protected $fillable=[
 'title',
-'details',
-'image',
-'category_id',
-'is_published',
-'url_title',
-'menu_title',
-'show_in_menu'
+'details'
+
     ];
 
 
 
-
-//A page has a category
-
-public function category()
-{
-return $this->belongsTo('App\Categories');
-
-
-}
 
 }

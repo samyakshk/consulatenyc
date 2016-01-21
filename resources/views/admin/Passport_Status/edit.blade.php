@@ -17,7 +17,7 @@
 </div>
 <div class="form-goup">
 {!!Form::label('Status_Name','Status')!!}
-{!!Form::select('Status_id',$statuses,null,['class'=>'form-control'])!!}
+{!!Form::select('Status_id',$statuses,$passports->latestStatus()->id,['class'=>'form-control'])!!}
 </div>
 
 

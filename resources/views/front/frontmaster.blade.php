@@ -31,10 +31,10 @@
      
   <?php
         use App\Pages;
-        use App\Categories;
+      
       
          $pages=Pages::latest()->get();
-         $categories=Categories::latest()->get();
+        
         
         ?>
        

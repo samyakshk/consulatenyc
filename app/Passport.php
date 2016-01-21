@@ -24,15 +24,9 @@ class Passport extends Model
 
 	public function latestStatus()
 	{
-		 return $this->status()->latest()->first();
-		//dd($this->status[0]);
-		//$allStatus=$this->status()->orderBy('updated_at')->first();
-		//dd($allStatus);
-		//return $allStatus[0]->Status_Name;
-		//dd($allStatus[0]->attributes["Status_Name"]);
-		//dd($this->status()->get());
-		//return $allStatus[0]->attributes["Status_Name"];
-		//dd($allStatus);
+		
+		return $this->status()->orderBy('passport_statuses.updated_at', 'desc')->first();
+		
 	}
 
 }
