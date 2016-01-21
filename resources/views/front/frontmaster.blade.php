@@ -38,24 +38,29 @@
         
         ?>
        
- <div class="container-fluid" style="background-color:#6683f0;color:#fff;height:130px;">
-  <div class="row">
-    <div class="col-sm-1">
+ <div class="container-fluid" style="background-color:#253681;color:#f63e2a;height:130px;">
+  
+    <div class="col-sm-1"style=" margin-top:15px;margin-left: 80px;">
         <img src="/laravel/consulatenyc/public/images/nepal-gov-logo.png" alt="logo" height="100px" float:"left">
     </div>
           <div class="col-sm-4">
-              <h3>Consulate Nepal </h3>
-              <h3>New York City</h3>
-          </div>
+              <h3>Consulate Nepal<br>New York City </h3>
+             
+     
   </div>
   
 </div>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="{{url('/',null)}}" class="pull-left">Consulate Nepal</a>
+         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand" href="{{url('/',null)}}" class="pull-left"></a>
     </div>
-    <div>
+    <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="{{url('/',null)}}">Home</a></li>
          <li class="dropdown">
@@ -112,7 +117,7 @@
 
 <li><a href="{{url('front/contact',null)}}">Contact Us</a></li>
 </ul>
-      
+      </div>
     </div>
   </div>
 </nav>

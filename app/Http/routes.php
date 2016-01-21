@@ -90,6 +90,7 @@ Route::get('admin/Homepage/create','homeController@create');
 Route::get('admin/Homepage/{id}','homeController@show');
 Route::post('admin/Homepage','homeController@store');
 Route::get('admin/Homepage/{id}/edit','homeController@edit');
+Route::patch('admin/Homepage/{id}/update','homeController@update');
 Route::get('admin/Homepage/{id}/delete','homeController@destroy');
 
 
