@@ -4,9 +4,8 @@
 
 
 <h2>Contact us at</h2>
-<div class="row">
-	<div class="col-sm-8">
-		
+
+			
 	<form>
 <fieldset class="form-group">
 	<label>Full Name:</lable>
@@ -23,11 +22,6 @@
 <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
-	</div>
-	<div class="row">
-	<div class="col-sm-8">
-		
 
 
-	</div>
 @endsection

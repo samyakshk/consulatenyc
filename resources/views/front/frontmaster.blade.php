@@ -9,6 +9,19 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
  
 <style>
+.navbar {
+      
+      background-color: #c1dbf5;
+    }
+   
+   .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: #6f0b08 !important;
+      background-color: #fe3324 !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+      color: #12163d !important;
+  }
    .affix {
       top: 0;
       width: 100%;
@@ -38,7 +51,7 @@
         
         ?>
        
- <div class="container-fluid" style="background-color:#253681;color:#f63e2a;height:130px;">
+ <div class="container-fluid" style="background-color:#071553;color:#f63e2a;height:130px;">
   
     <div class="col-sm-1"style=" margin-top:15px;margin-left: 80px;">
         
@@ -52,7 +65,7 @@
   </div>
   
 </div>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -64,7 +77,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="{{url('/',null)}}">Home</a></li>
+        <li ><a href="{{url('/',null)}}">Home</a></li>
          <li class="dropdown">
         <li><a class="dropdown-toggle" data-toggle="dropdown" href="{{url('/',null)}}">About Us<span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -115,8 +128,9 @@
        
   
         </li>
-      
-
+        @foreach($pages as $page) 
+      <li><a href="{{action('publicpagecontroller@show',[$page->id])}}">{{$page->title}}</a></li>
+  @endforeach
 <li><a href="{{url('front/contact',null)}}">Contact Us</a></li>
 </ul>
       </div>
@@ -128,7 +142,7 @@
 
 
 
-        <div class="container"  >
+        <div class="container"  style="height:900px; overflow: auto;">
 
             @yield('content')
             <br>
@@ -138,10 +152,18 @@
 
         <style>
 .bg-4 { 
-    background-color: #2f2f2f;
+    background-color: #050d31;
     color: #ffffff;
 
 }
+.col-sm-2 li a{
+color: #fff;
+
+}
+.col-sm-2 li a:hover, .navbar-nav li.active a {
+      color: #6f0b08 !important;
+      background-color: #abbff9 !important;
+  }
 </style>
 
 <br>

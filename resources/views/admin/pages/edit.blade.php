@@ -33,15 +33,7 @@
         </script>
         
 </div>
-<div class="form-goup">
-{!!Form::label('category_id','category')!!}
-{!!Form::select('category_id',$categories,null,['class'=>'form-control'])!!}
-</div>
-{!!Form::Label('show_in_menu','show_in_menu')!!}
-{!!Form::checkbox('show_in_menu',1,null,['class'=>'form-control'])!!}
 
-{!!Form::Label('is_published','is published')!!}
-{!!Form::checkbox('is_published',1,null,['class'=>'form-control'])!!}
 <div class="form-group">
 {!!Form::submit('edit page',['class'=>'btn btn-primary'])!!}
 	</div>

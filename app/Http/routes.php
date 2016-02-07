@@ -95,32 +95,21 @@ Route::get('admin/Homepage/{id}/delete','homeController@destroy');
 
 
 
-
-Route::get('admin/categories','Categoriescontroller@index');
-Route::get('admin/categories/create','Categoriescontroller@create');
-Route::get('admin/categories/{id}','Categoriescontroller@show');
-Route::post('admin/categories','Categoriescontroller@store');
-Route::get('admin/categories/{id}/edit','CategoriesController@edit');
-Route::patch('admin/categories/{id}/update','CategoriesController@update');
-Route::get('admin/categories/{id}/delete','CategoriesController@destroy');
-
-
-
-
 //Routes for pages
 
 Route::get('admin/pages','PagesController@index');
 Route::get('admin/pages/{id}','PagesController@show');
-Route::get('admin/pages/{id}/edit','PagesController@edit');
-Route::get('admin/pages/{id}/delete','PagesController@destroy');
  Route::post('admin/pages','PagesController@store');
+Route::get('admin/pages/{id}/edit','PagesController@edit');
+Route::patch('admin/pages/{id}/update','PagesController@update');
+Route::get('admin/pages/{id}/delete','PagesController@destroy');
 
 
 
 
 
 //Route::get('front/category/{id}','menucontroller@show');
-//Route::get('front/page/{id}','publicpagecontroller@show');
+Route::get('front/page/{id}','publicpagecontroller@show');
 
 
 //Routes for passport
@@ -287,6 +276,16 @@ Route::get('admin/trade/{id}/edit','TradeController@edit');
  Route::post('admin/trade','TradeController@store');
 Route::patch('admin/trade/{id}/update','TradeController@update');
 Route::get('admin/trade/{id}/delete','TradeController@destroy');
+
+Route::get('/admin/gallery', array('as' => 'index','uses' => 'AlbumsController@getList'));
+Route::get('/admin/gallery/createalbum', array('as' => 'create_album_form','uses' => 'AlbumsController@getForm'));
+Route::post('/admin/gallery/createalbum', array('as' => 'create_album','uses' => 'AlbumsController@postCreate'));
+Route::get('/admin/gallery/deletealbum/{id}', array('as' => 'delete_album','uses' => 'AlbumsController@getDelete'));
+Route::get('/admin/gallery/album/{id}', array('as' => 'show_album','uses' => 'AlbumsController@getAlbum'));
+Route::get('/admin/gallery/addimage/{id}', array('as' => 'add_image','uses' => 'ImageController@getForm'));
+Route::post('/admin/gallery/addimage', array('as' => 'add_image_to_album','uses' => 'ImageController@postAdd'));
+Route::get('/admin/gallery/deleteimage/{id}', array('as' => 'delete_image','uses' => 'ImageController@getDelete'));
+
 
 Route::controllers([
    'password' => 'Auth\PasswordController',

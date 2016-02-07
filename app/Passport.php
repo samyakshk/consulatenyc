@@ -28,5 +28,11 @@ class Passport extends Model
 		return $this->status()->orderBy('passport_statuses.updated_at', 'desc')->first();
 		
 	}
+	public function searchstatus()
+	{
+		
+		
+		
+	}
 
 }

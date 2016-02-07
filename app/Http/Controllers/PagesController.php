@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Pages;
 use Request;
-use App\Categories;
+
 use Input;
 class PagesController extends Controller
 {
@@ -39,8 +39,8 @@ class PagesController extends Controller
      */
     public function create()
     {
-         $categories=Categories::lists('title','id');
-    return view('admin.pages.create')->with('categories',$categories);
+        // $categories=Categories::lists('title','id');
+    return view('admin.pages.create');
     }
 
     /**
@@ -106,8 +106,8 @@ class PagesController extends Controller
     {
                
         $pages=Pages::findorFail($id);
-         $categories=Categories::lists('title','id');
-         return view('admin.pages.edit')->with('pages',$pages)->with('categories',$categories);
+        
+         return view('admin.pages.edit')->with('pages',$pages);
     }
 
     /**
