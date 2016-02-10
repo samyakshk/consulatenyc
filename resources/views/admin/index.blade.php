@@ -9,7 +9,8 @@
 
 <a class="btn btn-primary" href="{{url('/admin/gallery',null)}}" role="button">Image Gallery</a>
 
-<h3>Pages</h3><a class="btn btn-primary" href="{{url('/admin/pages',null)}}" role="button"><span class="glyphicon glyphicon-plus-sign"></span> Add pages</a>
+<h3>Pages</h3>
+{{--<a class="btn btn-primary" href="{{url('/admin/pages',null)}}" role="button"><span class="glyphicon glyphicon-plus-sign"></span> Add pages</a>--}}
 <div class="row">
 <ul >
 	 <div class="col-sm-2">
