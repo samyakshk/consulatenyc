@@ -82,7 +82,7 @@ class TouristVisaController extends Controller
     {
        $tvupdate=Request::all();
         $tvisas=TouristVisa::findorFail($id);
-        $tvisas->update($attupdate);
+        $tvisas->update($tvupdate);
         return redirect('admin/touristvisa');
     }
 

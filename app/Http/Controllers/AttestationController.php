@@ -66,7 +66,7 @@ class AttestationController extends Controller
      */
     public function edit($id)
     {
-         $attestations=Attestations::findorFail($id);
+         $attestations=Attestation::findorFail($id);
         return view('admin.attestation.edit')->with('attestations',$attestations);
     }
 
@@ -80,7 +80,7 @@ class AttestationController extends Controller
     public function update(Request $request, $id)
     {
          $attupdate=Request::all();
-        $attestations=Attestations::findorFail($id);
+        $attestations=Attestation::findorFail($id);
         $attestations->update($attupdate);
         return redirect('admin/attestation');
     }

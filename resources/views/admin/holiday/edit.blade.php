@@ -3,7 +3,7 @@
 
 <h2>edit {{$hols->title}} </h2>
 
-{!!Form::model($hols,['method'=>'PATCH','action'=>['PublicHolidayController@update',$hols->id]])!!}
+{!!Form::model($hols,['method'=>'PATCH','action'=>['HolidayController@update',$hols->id]])!!}
 <div class="form-goup">
 {!!Form::label('title','title')!!}
 {!!Form::text('title',null,['class'=>'form-control'])!!}

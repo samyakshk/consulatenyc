@@ -14,7 +14,7 @@
 <ul >
 	 <div class="col-sm-2">
 	<ul style="list-style: none;">About Us
-		<li><a href="{{url('/admin/consulargeneral',null)}}">Consular General</a></li>
+		<li><a href="{{url('/admin/consular',null)}}">Consular General</a></li>
 		<li><a href="{{url('/admin/orgstruc',null)}}">Organistion Structure</a></li>
 	</ul>	
 	</div>

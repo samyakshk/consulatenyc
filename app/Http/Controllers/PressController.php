@@ -81,7 +81,7 @@ class PressController extends Controller
     {
            $pressupdate=Request::all();
         $presses=Press::findorFail($id);
-        $press->update($pressupdate);
+        $presses->update($pressupdate);
         return redirect('admin/press');
     }
 

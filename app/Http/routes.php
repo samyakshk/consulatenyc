@@ -163,13 +163,13 @@ Route::get('admin/attestation/{id}/edit','AttestationController@edit');
 Route::patch('admin/attestation/{id}/update','AttestationController@update');
 Route::get('admin/attestation/{id}/delete','AttestationController@destroy');
 //Route ConcularGeneral
-Route::get('admin/consulargeneral','ConsulargenController@index');
-Route::get('admin/consulargeneral/create','ConsulargenController@create');
-Route::get('admin/consulargeneral/{id}','ConsulargenController@show');
-Route::get('admin/consulargeneral/{id}/edit','ConsulargenController@edit');
- Route::post('admin/consulargeneral','ConsulargenController@store');
-Route::patch('admin/consulargeneral/{id}/update','ConsulargenController@update');
-Route::get('admin/consulargeneral/{id}/delete','ConsulargenController@destroy');
+Route::get('admin/consular','ConsulargenController@index');
+Route::get('admin/consular/create','ConsulargenController@create');
+Route::get('admin/consular/{id}','ConsulargenController@show');
+Route::get('admin/consular/{id}/edit','ConsulargenController@edit');
+ Route::post('admin/consular','ConsulargenController@store');
+Route::patch('admin/consular/{id}/update','ConsulargenController@update');
+Route::get('admin/consular/{id}/delete','ConsulargenController@destroy');
 //Route DipVisa
 
 Route::get('admin/diplomacyvisa','DipVisaController@index');

@@ -43,7 +43,7 @@ class ConsulargenController extends Controller
 
       ConsularGen::create($input);
 
-      return redirect('admin/consulargeneral');
+      return redirect('admin/consular');
     }
 
     /**
@@ -82,7 +82,7 @@ class ConsulargenController extends Controller
         $consupdate=Request::all();
         $cons=ConsularGen::findorFail($id);
         $cons->update($consupdate);
-        return redirect('admin/consulargeneral');
+        return redirect('admin/consular');
     }
 
     /**
@@ -95,6 +95,6 @@ class ConsulargenController extends Controller
     {
         $cons=ConsularGen::findorFail($id);
         $cons->delete();
-        return redirect('admin/consulargeneral');
+        return redirect('admin/consular');
     }
 }
