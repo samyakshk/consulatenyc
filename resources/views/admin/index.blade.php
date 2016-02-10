@@ -50,7 +50,14 @@
 </ul>
 
 		</div>
+ <div class="col-sm-2">
+<ul style="list-style: none;">Passports
+    <li><a href="{{url('/admin/travel',null)}}">Travel document</a></li>
 
+    
+</ul>
+
+		</div>
 
 </ul>
 	

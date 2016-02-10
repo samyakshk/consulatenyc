@@ -58,6 +58,9 @@ Route::get('/front/notice', function () {
 Route::get('/front/consular', function () {
     return view('/front/consular');
 });
+Route::get('/front/travel', function () {
+    return view('/front/traveldoc');
+});
 
 
 // Authentication routes...
@@ -110,6 +113,13 @@ Route::get('admin/pages/{id}/delete','PagesController@destroy');
 
 //Route::get('front/category/{id}','menucontroller@show');
 Route::get('front/page/{id}','publicpagecontroller@show');
+
+Route::get('/front/gallery', function () {
+    return view('/front/gallery/index');
+});
+Route::get('/front/gallery/album/{id}',array('as' => 'showalbum','uses' => 'AlbumsController@showAlbum'));
+
+
 
 
 //Routes for passport
@@ -277,6 +287,18 @@ Route::get('admin/trade/{id}/edit','TradeController@edit');
 Route::patch('admin/trade/{id}/update','TradeController@update');
 Route::get('admin/trade/{id}/delete','TradeController@destroy');
 
+
+
+Route::get('admin/travel','TraveldocumentController@index');
+Route::get('admin/travel/create','TraveldocumentController@create');
+Route::get('admin/travel/{id}','TraveldocumentController@show');
+Route::get('admin/travel/{id}/edit','TraveldocumentController@edit');
+ Route::post('admin/travel','TraveldocumentController@store');
+Route::patch('admin/travel/{id}/update','TraveldocumentController@update');
+Route::get('admin/travel/{id}/delete','TraveldocumentController@destroy');
+
+
+
 Route::get('/admin/gallery', array('as' => 'index','uses' => 'AlbumsController@getList'));
 Route::get('/admin/gallery/createalbum', array('as' => 'create_album_form','uses' => 'AlbumsController@getForm'));
 Route::post('/admin/gallery/createalbum', array('as' => 'create_album','uses' => 'AlbumsController@postCreate'));
@@ -285,6 +307,10 @@ Route::get('/admin/gallery/album/{id}', array('as' => 'show_album','uses' => 'Al
 Route::get('/admin/gallery/addimage/{id}', array('as' => 'add_image','uses' => 'ImageController@getForm'));
 Route::post('/admin/gallery/addimage', array('as' => 'add_image_to_album','uses' => 'ImageController@postAdd'));
 Route::get('/admin/gallery/deleteimage/{id}', array('as' => 'delete_image','uses' => 'ImageController@getDelete'));
+
+
+//Route to check the status of the passport
+Route::post('admin/statusCheck','PassportStatusController@statusCheck');
 
 
 Route::controllers([

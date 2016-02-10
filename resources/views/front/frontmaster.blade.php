@@ -51,16 +51,12 @@
         
         ?>
        
- <div class="container-fluid" style="background-color:#071553;color:#f63e2a;height:130px;">
+ <div class="container-fluid" style="background-color:#071553;color:#f63e2a;height:200px;">
   
-    <div class="col-sm-1"style=" margin-top:15px;margin-left: 80px;">
         
-   <img src="{{URL::asset('images/nepal-gov-logo.png')}}" alt="logo" height="100px" float:"left" >
+   <img src="{{URL::asset('images/banner2.gif')}}" alt="logo" height="200px" float:"left" width="100%" >
 
-    </div>
-          <div class="col-sm-4">
-              <h3>Consulate Nepal<br>New York City </h3>
-             
+    
      
   </div>
   
@@ -107,6 +103,19 @@
           </ul>
         </li>
 
+
+          <li class="dropdown">
+        <li><a class="dropdown-toggle" data-toggle="dropdown" href="{{url('/',null)}}">Passport<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+               <li><a href="{{url('/front/travel',null)}}">Travel Documents</a></li>
+        
+          </ul>
+        </li>
+
+
+
+
+
           <li class="dropdown">
         <li><a class="dropdown-toggle" data-toggle="dropdown" href="{{url('/',null)}}">Ecomomic Diplomacy<span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -131,6 +140,7 @@
         @foreach($pages as $page) 
       <li><a href="{{action('publicpagecontroller@show',[$page->id])}}">{{$page->title}}</a></li>
   @endforeach
+  <li><a href="{{url('front/gallery',null)}}">Gallery</a></li>
 <li><a href="{{url('front/contact',null)}}">Contact Us</a></li>
 </ul>
       </div>
@@ -174,23 +184,23 @@ color: #fff;
 <div class="row">
   <div class="col-sm-2">
     <ul style="list-style: none;">Passport
-        <li></li>
+          <li><a href="{{url('/front/travel',null)}}">Travel Documents</a></li>
         <li></li>
     </ul>
   </div>
   <div class="col-sm-2">
        <ul style="list-style: none;">Econimic Diplomcy
-         <li><a href="#">Tourism</a></li>
-          <li><a href="#">Trade</a></li>
-          <li><a href="#">Investment</a></li> 
+        <li><a href="{{url('/front/tourism',null)}}">Tourism</a></li>
+          <li><a href="{{url('/front/trade',null)}}">Trade</a></li>
+         <li><a href="{{url('/front/investment',null)}}">Investment</a></li> 
     </ul>
 
   </div>
   <div class="col-sm-2">
          <ul style="list-style: none;">Visa
-         <li><a href="#">Diplomatic Visa</a></li>
-          <li><a href="#">Tourist Visa</a></li>
-          <li><a href="#">Official Visa</a></li> 
+         <li><a href="{{url('/front/DipVisa',null)}}">Diplomacy Visa</a></li>
+          <li><a href="{{url('/front/Tvisa',null)}}">Tourist Visa</a></li>
+          <li><a href="{{url('/front/OffVisa',null)}}">Official Visa</a></li> 
     </ul>
   </div>
  

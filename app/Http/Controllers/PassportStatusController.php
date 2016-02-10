@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use DB;
+
 use Illuminate\Http\Request;
 
+use Redirect;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 //use Request;
@@ -108,4 +111,35 @@ $passport=Passport::create($request->all());
     {
         //
     }
+    //check the status of the passport entered and give the value
+    public function statusCheck(Request $request)
+    {
+        $name=$request->input('fullname');
+        $dob=$request->input('dob');
+        $passportNum=$request->input('passportNum');
+       
+       $passports = Passport::where('Full_Name','=',$name)->orWhere('Date_Of_Birth','=',$dob)->orWhere('Passport_Number','=',$passportNum)->latest()->get();
+          //dd($passports);
+       if($passports->count() > 0){
+            foreach($passports as $passport){
+                $status=$passport->latestStatus()->Status_Name;
+            }
+            return Redirect::back()->withErrors(['<div class="alert alert-info alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    Your Status is <strong>'.$status.'</strong> </div>']);
+        }
+
+        return Redirect::back()->withErrors(['<div class="alert alert-warning alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    Please enter valid information </div>']);
+       
+        // Session::flash('message', $status);
+        // return Redirect::back();
+        // return view('front.passportstatusview')->with('passports',$passports);
+        
+    }
+
+
+
+    
 }

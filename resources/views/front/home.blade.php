@@ -18,22 +18,27 @@
 	 	<br>
 </div>
 <div class="col-sm-4">
-<h4><b>Check your passport status</h4>
-<form>
-<fieldset class="form-group">
-	<label>Full Name:</lable>
-		<input type="text" class="form-control" placeholder="Your Full Name">
-</fieldset>
-<fieldset class="form-group">
-	<label>Date of birth:</label>
-		<input type="date" class="form-control" >
-</fieldset>
-<fieldset class="form-group">
-	<label>Passport Number:</lable>
-		<input type="text" class="form-control" placeholder="Your Passport Number">
-</fieldset>
-<button type="submit" class="btn btn-primary">Search</button>
-</form>
+	@if($errors->any())
+
+	  {!!$errors->first()!!} 
+	
+@endif
+<h4>Check your Passport Status</h4>
+{!!Form::open(['url'=>'admin/statusCheck','target'=>'_top'])!!}
+		<fieldset class="form-group">
+			<label>Full Name:</label>
+				<input type="text" name="fullname" class="form-control" placeholder="Your Full Name" >
+		</fieldset>
+		<fieldset class="form-group">
+			<label>Date of birth:</label>
+				<input type="date" name="dob" class="form-control"  >
+		</fieldset>
+		<fieldset class="form-group">
+			<label>Passport Number:</label>
+				<input type="text" name="passportNum" class="form-control" placeholder="Your Passport Number" >
+		</fieldset>
+		<button type="submit" class="btn btn-primary">Search</button>
+	{!!Form::close()!!}
 </div>
 </div>
 

@@ -29,6 +29,14 @@ class AlbumsController extends Controller
   {
     return view('admin.imagegallery.createalbum');
   }
+
+   public function showAlbum($id)
+  {
+    $album = Album::with('Photos')->find($id);
+   
+
+     return view('front.gallery.images')->with('album',$album);
+  }
   public function postCreate()
   {
     $rules = array(
